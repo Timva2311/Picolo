@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="Drinking_GameEntities">
+    <EntitySetMapping Name="Rules">
+      <EntityTypeMapping TypeName="Model.Rule">
+        <MappingFragment StoreEntitySet="Rules">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="rule_start" ColumnName="rule_start" />
+          <ScalarProperty Name="rule_end" ColumnName="rule_end" />
+          <ScalarProperty Name="String" ColumnName="String" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Names" ColumnName="Names" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,16 @@
+﻿@model DAL.Rule
+@{
+    ViewBag.Title = "Game";
+}
+<div class="Absolute-Center is-Responsive game">
+    <h1 id="gameType">@Model.TypeString()</h1>
+    <h2 id="gameQuestion">@Model.GeneratedText</h2>
+</div>
+
+@section scripts{
+    <script>
+        $('body').click(function() {
+            window.location.href = "@Url.Action("GameResult")";
+        });
+    </script>
+}

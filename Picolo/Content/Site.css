@@ -1,0 +1,152 @@
+﻿/* devanagari */
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Modak'), url(https://fonts.gstatic.com/s/modak/v2/hE-dnNl6nciVP8xd4-Lyvg.woff2) format('woff2');
+  unicode-range: U+02BC, U+0900-097F, U+1CD0-1CF6, U+1CF8-1CF9, U+200B-200D, U+20A8, U+20B9, U+25CC, U+A830-A839, U+A8E0-A8FB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Modak'), url(https://fonts.gstatic.com/s/modak/v2/MhZ73m81GUzYqZzWWLY62w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Modak';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Modak'), url(https://fonts.gstatic.com/s/modak/v2/KQVyQ1K9OWS9_JeuojBuzQ.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* greek-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+/* greek */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+body{
+  background: #00589F;
+  color: white;
+}
+
+body.bottoms-up{
+    background: #43cea2 !important;
+    color: white !important;
+}
+
+body.game{
+    background: #ADD100 !important;
+    color: white !important;
+}
+body.default{
+    background: #606c88 !important;
+    color: white !important;
+}
+
+div.well{
+  height: 250px;
+} 
+
+.Absolute-Center {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+  width: 50%; 
+  height: 50%;
+  min-width: 200px;
+  max-width: 400px;
+  padding: 40px;
+}
+.Absolute-Center.is-Responsive.game {
+    max-width: 100%;
+    text-align: center;
+}
+
+#logo-container{
+    margin: auto;
+    margin-bottom: 10px;
+    width:50px;
+    height:50px;
+    background-size: 50px 50px;
+    background-image:  url('http://icons.iconarchive.com/icons/flat-icons.com/flat/512/Beer-icon.png')
+}
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn){
+    width: 100%;
+}
+.input-group-addon.male {
+    color: rgb(255, 255, 255);
+    background-color: #89cff0;
+    border-color: #5cbdea;
+}
+.input-group-addon.female {
+    color: rgb(255, 255, 255);
+    background-color: #FFB6C1;
+    border-color: #e5a3ad;
+}
+
+h1{
+    font-size: 5em;
+    font-family: 'Modak', cursive;
+    text-transform: uppercase;
+}
+h2{
+    font-family: 'Roboto', sans-serif;
+}
+

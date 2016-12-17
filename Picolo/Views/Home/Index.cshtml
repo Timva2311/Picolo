@@ -1,0 +1,69 @@
+﻿@{
+    ViewBag.Title = "Game";
+}
+
+<div class="Absolute-Center is-Responsive">
+    <div id="logo-container"></div>
+    <div class="col-sm-12 col-md-10 col-md-offset-1">
+        @using (Html.BeginForm("Game", "Home", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <div id="groupName">
+                @for (int i = 0; i < 3; i++)
+                {
+                    <div class="form-group input-group">
+                        <span class="input-group-addon male">
+                            <i class="fa fa-mars"
+                               aria-hidden="true"></i>
+                            <input type="text" name="sex" value="Male" style="display: none;" />
+                        </span>
+                        <input class="form-control" type="text" name="name" placeholder="Name" />
+                    </div>
+                }
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-success" id="addName">
+                    <i class="fa fa-plus"
+                       aria-hidden="true"></i>
+                </button>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-warning btn-block">
+                    Let's get drunk
+                </button>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+            $("#groupName").on('click', '.input-group-addon', function () {
+                var icon = $(this).find("i");
+                if (icon.hasClass("fa-mars")) {
+                    $(this).removeClass("male");
+                    $(this).addClass("female");
+                    icon.removeClass("fa-mars");
+                    icon.addClass("fa-venus");
+                    $(this).find("input[name='sex']").val("Female");
+                } else {
+                    $(this).removeClass("female");
+                    $(this).addClass("male");
+                    icon.removeClass("fa-venus");
+                    icon.addClass("fa-mars");
+                    $(this).find("input[name='sex']").val("Male");
+                }
+            });
+            //AddNew
+            jQuery("#addName").click(function () {
+                $("#groupName").append('<div class="form-group input-group">' +
+                            '<span class="input-group-addon male">' +
+                            '<i class="fa fa-mars" aria-hidden="true"></i>' +
+                                '<input type="text" name="sex" value="Male" style="display: none;"/>' +
+                            '</span>' +
+                            '<input class="form-control" type="text" name="name" placeholder="Name"/>' +
+                        '</div>');
+            });
+    </script>
+}

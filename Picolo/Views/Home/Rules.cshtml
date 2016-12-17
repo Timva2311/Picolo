@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Domain.Rules.DtoRule>
+
+@{
+    ViewBag.Title = "Rules";
+}
+
+<h2>Rules</h2>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Key)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ParentKey)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Text)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NbPlayers)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PackId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CycleState)
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Key)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentKey)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Text)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NbPlayers)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PackId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CycleState)
+            </td>
+        </tr>
+    }
+
+</table>

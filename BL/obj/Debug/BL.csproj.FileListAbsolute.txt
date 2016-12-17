@@ -1,0 +1,14 @@
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\BL.dll.config
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\BL.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\BL.pdb
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\DAL.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\Domain.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\EntityFramework.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\DAL.pdb
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\Domain.pdb
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\EntityFramework.xml
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\obj\Debug\BL.csprojResolveAssemblyReference.cache
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\obj\Debug\BL.dll
+C:\Users\Tim\documents\visual studio 2015\Projects\Picolo\BL\obj\Debug\BL.pdb
