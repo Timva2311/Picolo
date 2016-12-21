@@ -14,6 +14,7 @@ namespace Picolo.Controllers
     {
         private readonly IRuleManager _mgr;
 
+
         public HomeController()
         {
             _mgr = new RuleManager();
@@ -30,7 +31,7 @@ namespace Picolo.Controllers
             var names = form["name"].Split(char.Parse(","));
             var sex = form["sex"].Split(char.Parse(","));
 
-            var players = new List<Player>();
+            var activePlayers = new List<Player>();
             for (int i = 0; i < names.Length; i++)
             {
                 if (string.IsNullOrEmpty(names[i]))
@@ -42,102 +43,24 @@ namespace Picolo.Controllers
                     Name = names[i],
                     Sex = (Sex)Enum.Parse(typeof(Sex), sex[i])
                 };
-                players.Add(player);
+                activePlayers.Add(player);
             }
-
-
-            int count = _mgr.CountRules();
-            var rand = new Random();
-            var good = false;
-            Rule rule = null;
-            while (!good)
-            {
-                var random = rand.Next(count);
-                rule = _mgr.FindRule(random);
-                if (!string.IsNullOrEmpty(rule.rule_start))
-                {
-                    rule.Turn = 0;
-                    Session["Rules"] = new List<Rule> {rule};
-                    good = true;
-                }
-                else if (string.IsNullOrEmpty(rule.rule_end))
-                {
-                    Session["Rules"] = new List<Rule>();
-                    good = true;
-                }
-
-            }
-            Rule displayRule = (rule);
-            players.Shuffle();
-            Session["players"] = players;
-            displayRule.Players = players;
-            displayRule.GenerateText();
+            activePlayers.Shuffle();
+            List<Rule> activeRules = new List<Rule>();
+            Rule displayRule = _mgr.ExecuteGameLogic(ref activePlayers, ref activeRules);
+            Session["Rules"] = activeRules;
+            Session["Players"] = activePlayers;
             return View(displayRule);
         }
 
         public ActionResult GameResult()
         {
-            int count = _mgr.CountRules();
-            var players = (List<Player>)Session["players"];
-            var rand = new Random();
-            var good = false;
-            var isEndRule = false;
+            List<Player> activePlayers = (List<Player>) Session["Players"];
+            activePlayers.Shuffle();
             List<Rule> activeRules = (List<Rule>)Session["Rules"];
-            List<Player> ruledPlayers = new List<Player>();
-            Rule rule = null;
-            foreach(Rule activeRule in activeRules)
-            {
-                if (activeRule.Type != 99)
-                {
-                    activeRule.Turn++;
-                    if (activeRule.Turn > Rule.LONG_TYPE && activeRule.Turn < Rule.CULSEC_TYPE)
-                    {
-                        if (rand.Next(5) == 1)
-                        {
-                            rule = _mgr.FindEndrule(activeRule.rule_start);
-                            good = true;
-                            isEndRule = true;
-                            activeRule.Type = 99;
-                            ruledPlayers = activeRule.RuledPlayers;
-                        }
-                    }
-                    else if (activeRule.Turn == Rule.CULSEC_TYPE)
-                    {
-                        rule = _mgr.FindEndrule(activeRule.rule_start);
-                        good = true;
-                        isEndRule = true;
-                        activeRule.Type = 99;
-                        ruledPlayers = activeRule.RuledPlayers;
-                    }
-                }
-            }
-            
-
-            while (!good)
-            {
-                var random = rand.Next(count);
-                rule = _mgr.FindRule(random);
-                if (!string.IsNullOrEmpty(rule.rule_start))
-                {
-                    activeRules.Add(rule);
-                }
-                if (string.IsNullOrEmpty(rule.rule_end))
-                    good = true;
-            }
-
+            Rule displayRule = _mgr.ExecuteGameLogic(ref activePlayers, ref activeRules);
             Session["Rules"] = activeRules;
-            Rule displayRule = (rule);
-            players.Shuffle();
-            Session["players"] = players;
-            displayRule.Players = players;
-            if (isEndRule)
-            {
-                displayRule.GenerateTextForRule(ruledPlayers);
-            }
-            else
-            {
-                displayRule.GenerateText();
-            }
+            Session["Players"] = activePlayers;
             return View(displayRule);
         }
 

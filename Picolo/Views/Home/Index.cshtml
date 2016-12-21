@@ -5,27 +5,47 @@
 <div class="Absolute-Center is-Responsive">
     <div id="logo-container"></div>
     <div class="col-sm-12 col-md-10 col-md-offset-1">
-        @using (Html.BeginForm("Game", "Home", FormMethod.Post))
-        {
-            @Html.AntiForgeryToken()
-            <div id="groupName">
-                @for (int i = 0; i < 3; i++)
+    @using (Html.BeginForm("Game", "Home", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <div id="groupName">
+            @for (int i = 0; i < 3; i++)
                 {
-                    <div class="form-group input-group">
-                        <span class="input-group-addon male">
-                            <i class="fa fa-mars"
-                               aria-hidden="true"></i>
-                            <input type="text" name="sex" value="Male" style="display: none;" />
-                        </span>
-                        <input class="form-control" type="text" name="name" placeholder="Name" />
-                    </div>
-                }
-            </div>
+                <div class="form-group input-group">
+                    <span class="input-group-addon male">
+                        <i class="fa fa-mars"
+                           aria-hidden="true"></i>
+                        <input type="text" name="sex" value="Male" style="display: none;" />
+                    </span>
+                    <input class="form-control" type="text" name="name" placeholder="Name" />
+                </div>
+            }
+        </div>
             <div class="form-group">
                 <button type="button" class="btn btn-success" id="addName">
                     <i class="fa fa-plus"
                        aria-hidden="true"></i>
                 </button>
+            </div>
+            <div class="icon-thread">
+                <ul>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2" checked="checked" title="Nenhum">
+                        <label style="margin-left:-20px;" class="radio" for="optionsRadios2"><i class="fa fa-book"></i></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
+                        <label class="radio" for="optionsRadios1"><i class="fa fa-fire"></i></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <label class="radio" for="optionsRadios2"><i class="fa fa-smile-o"></i></label>
+                    </li>
+                    <li>
+                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                        <label class="radio" for="optionsRadios2"><i class="fa fa-bomb"></i></label>
+                    </li>
+                </ul>
             </div>
             <div class="form-group">
                 <button type="submit" class="btn btn-warning btn-block">
